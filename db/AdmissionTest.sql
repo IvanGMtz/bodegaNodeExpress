@@ -9,9 +9,9 @@ CREATE TABLE bodegas(
     estado TINYINT(4) NOT NULL,
     created_by BIGINT(20) UNSIGNED,
     update_by BIGINT(20) UNSIGNED,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP,
-    deleted_at TIMESTAMP);
+    created_at TIMESTAMP NULL,
+    updated_at TIMESTAMP NULL,
+    deleted_at TIMESTAMP NULL);
 
 CREATE TABLE historiales (
     id BIGINT(20) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -21,9 +21,9 @@ CREATE TABLE historiales (
     id_inventario BIGINT(20) UNSIGNED NOT NULL ,
     created_by BIGINT(20) UNSIGNED,
     update_by BIGINT(20) UNSIGNED,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP,
-    deleted_at TIMESTAMP);
+    created_at TIMESTAMP NULL,
+    updated_at TIMESTAMP NULL,
+    deleted_at TIMESTAMP NULL);
 
 CREATE TABLE inventarios (
     id BIGINT(20) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -32,9 +32,9 @@ CREATE TABLE inventarios (
     cantidad INT(11) NOT NULL,
     created_by BIGINT(20) UNSIGNED,
     update_by BIGINT(20) UNSIGNED,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP,
-    deleted_at TIMESTAMP);
+    created_at TIMESTAMP NULL,
+    updated_at TIMESTAMP NULL,
+    deleted_at TIMESTAMP NULL);
 
 CREATE TABLE productos (
     id BIGINT(20) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -43,9 +43,9 @@ CREATE TABLE productos (
     estado TINYINT(4) NOT NULL,
     created_by BIGINT(20) UNSIGNED ,
     update_by BIGINT(20) UNSIGNED,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP,
-    deleted_at TIMESTAMP);
+    created_at TIMESTAMP NULL,
+    updated_at TIMESTAMP NULL,
+    deleted_at TIMESTAMP NULL);
 
 CREATE TABLE users (
     id BIGINT(20) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
@@ -57,9 +57,9 @@ CREATE TABLE users (
     update_by BIGINT(20) UNSIGNED,
     foto VARCHAR(255),
     password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP,
-    deleted_at TIMESTAMP);
+    created_at TIMESTAMP NULL,
+    updated_at TIMESTAMP NULL,
+    deleted_at TIMESTAMP NULL);
 
 ALTER TABLE productos
 ADD CONSTRAINT userProduct
