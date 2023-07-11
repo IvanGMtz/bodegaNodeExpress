@@ -1,22 +1,7 @@
 import { Router } from "express";
-import mysql from "mysql2";
+import con from "../server/connection.js"
 const appUsuario = Router();
-let con = undefined;
 
-appUsuario.use((req, res, next)=>{
-    try {
-        con = mysql.createPool({
-            host: "localhost",
-            user: "campus",
-            password: "campus2023",
-            database: "admissionTest",
-            port: 3306
-    });
-    next();        
-    } catch (error) {
-        res.status(500).send('Conexion pailas papá, funado de la red :(')
-    }
-})
 
 // ? Al agregar el signo "?"  decimos que es opcional el parametro
 appUsuario.post("/", (req, res) => {

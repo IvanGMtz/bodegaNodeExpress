@@ -1,22 +1,6 @@
 import { Router } from "express";
-import mysql from "mysql2";
+import con from "../server/connection.js"
 const appInventario = Router();
-let con = undefined;
-
-appInventario.use((req, res, next) => {
-  try {
-    con = mysql.createPool({
-      host: "localhost",
-      user: "root",
-      password: "",
-      database: "admissionTest",
-      port: 3306,
-    });
-    next();
-  } catch (error) {
-    res.status(500).send("Bad connection");
-  }
-});
 
 appInventario.post("/", (req, res) => {
   const { id_producto, id_bodega, cantidad } = req.body;

@@ -1,22 +1,6 @@
 import { Router } from "express";
-import mysql from "mysql2";
+import con from "../server/connection.js"
 const appProduct = Router();
-let con = undefined;
-
-appProduct.use((req, res, next) => {
-  try {
-    con = mysql.createPool({
-      host: "localhost",
-      user: "root",
-      password: "",
-      database: "admissionTest",
-      port: 3306,
-    });
-    next();
-  } catch (error) {
-    res.status(500).send("Bad connection");
-  }
-});
 
 appProduct.post("/", (req, res) => {
   con.query(
