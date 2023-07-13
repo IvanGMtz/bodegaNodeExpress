@@ -1,10 +1,12 @@
 import { Router } from "express";
 import con from "../server/connection.js"
+import appValidate from "../middleware/ValidateUser.js";
+import 'reflect-metadata';
 const appUsuario = Router();
 
 
 // ? Al agregar el signo "?"  decimos que es opcional el parametro
-appUsuario.post("/", (req, res) => {
+appUsuario.post("/", appValidate, (req, res) => {
     con.query(
         /*sql*/ `INSERT INTO users SET ?`,
         req.body,
