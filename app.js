@@ -3,6 +3,7 @@ import appUsuario from "./routers/user.js";
 import appBodegas from "./routers/bodegas.js";
 import appProductos from "./routers/productos.js";
 import appInventario from './routers/inventarios.js';
+
 import dotenv from "dotenv";
 dotenv.config();
 const appExpress = express();
